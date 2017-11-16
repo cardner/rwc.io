@@ -1,0 +1,49 @@
+// Font Styles
+$body-font-family: 'Work Sans';
+$header-font-family: 'Lora';
+
+$body-font-weight-normal: 400;
+$header-font-weight-bold: 700;
+
+$small-font-size: .667rem;
+$base-font-size: 1rem;
+$h1-font-size: 5.063rem;
+$h2-font-size: 3.375rem;
+$h3-font-size: 2.25rem;
+
+$base-icon-size: 2rem;
+
+// Colors
+$grey: (
+    light: #FAFAFA,
+    mid: #DCD9D9,
+    dark: #CEC9C9
+);
+
+$purple: (
+    light: #441D46,
+    dark: #2B122C
+);
+
+$red: #D03320;
+$yellow: #EA8340;
+
+$base-font-color: map-get($purple, 'dark');
+$base-link-color: $red;
+$base-heading-color: map-get($purple, 'light');
+$body-bkg-color: map-get($grey, 'light');
+$base-icon-color: map-get($purple, 'light');
+
+// Margins
+$base-header-margins: 1.414em 0 .5em;
+
+// Paddings
+
+// Borders
+
+// Widths
+$base-line-length: 40.625rem;
+$header-line-length: 50rem;
+$input-line-length: 26.25rem;
+$small-input-line-length: 11.25rem;
+$aside-line-length: 14.375rem;

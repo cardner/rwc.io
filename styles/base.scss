@@ -1,0 +1,138 @@
+// import font families from google
+@import url('https://fonts.googleapis.com/css?family=Lora:700|Lato:400');
+
+// include global elements
+@import 'global/variables';
+@import 'global/mixins';
+
+// Atomic Classes
+
+    // Body
+    body {
+        font-family: $body-font-family, sans-serif;
+        font-weight: $body-font-weight-normal;
+        font-size: 16px;
+        line-height: 1.45;
+        color: $base-font-color;
+        margin: 0;
+        padding: 1.45rem;
+    }
+
+    //  Copy
+    p {
+        font-size: $base-font-size;
+        margin-top: 0;
+        margin-bottom: 1.3em;
+    }
+
+    small,
+    sub,
+    sup,
+    .a--font-size-small {
+        font-size: $small-font-size;
+    }
+
+    //  Links
+    a {
+        color: $base-font-color;
+        text-decoration: none;
+        border-bottom: 1px solid $base-link-color;
+        transition: all ease-in-out 200ms;
+
+        &:hover {
+            color: $base-link-color;
+            border-bottom-width: 2px;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+    }
+
+    //  Header
+    %heading {
+        color: $base-heading-color;
+        font-family: $header-font-family, serif;
+        font-weight: $header-font-weight-bold;
+        line-height: 1.2;
+        margin: $base-header-margins;
+    }
+
+    h1 {
+        @extend %heading;
+        font-size: $h1-font-size;
+        margin-top: 0;
+    }
+
+    h2 {
+        @extend %heading;
+        font-size: $h2-font-size;
+    }
+
+    h3 {
+        @extend %heading;
+        font-size: $h3-font-size;
+    }
+
+    //  Layout
+
+// Component Classes
+
+    // Header
+
+    // Content
+
+    // Footer
+
+    // Icons
+    %icon {
+        display: inline-block;
+        // background: url(../assets/images/sprite.png);
+        // background-repeat: no-repeat;
+        // background-image: url(../assets/images/sprite.svg);
+        width: $base-icon-size;
+        height: $base-icon-size;
+        fill: $base-icon-color;
+        // background-size: $base-icon-size $base-icon-size;
+    }
+
+    .icon {
+        &-email {
+            @extend %icon;
+            background-position: 0 0;
+        }
+
+        &-twitter {
+            @extend %icon;
+            background-position: -64px 0;
+        }
+
+        &-github {
+            @extend %icon;
+            background-position: -128px 0;
+        }
+
+        &-linkedin {
+            @extend %icon;
+            background-position: -192px 0;
+        }
+    }
+
+// Homepage Classes
+
+main {
+    display: grid;
+    grid-template-columns: minmax(420px, 650px) minmax(230px, 420px);
+    grid-template-rows: auto;
+    grid-column-gap: 5vw;
+    grid-row-gap: 3vh;
+}
+
+nav {
+    grid-column: 1/-1;
+    ul {
+        text-align: center;
+    }
+}
