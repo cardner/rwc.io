@@ -7,6 +7,7 @@ const jsmin = require('gulp-jsmin')
 const rename = require('gulp-rename')
 const stylelint = require('gulp-stylelint')
 const autoprefixer = require('gulp-autoprefixer')
+const imagemin = require('gulp-imagemin')
 
 const autoprefixerOptions = {
     browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
@@ -36,6 +37,9 @@ gulp.task('scripts', () => (
 
 gulp.task('images', () => (
     gulp.src('assets/images/*.*')
+        .pipe(imagemin({
+            verbose: true
+        }))
         .pipe(gulp.dest('public/assets/images'))
 ))
 
