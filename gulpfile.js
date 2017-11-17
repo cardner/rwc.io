@@ -3,9 +3,10 @@ const gulp = require('gulp')
 const htmlmin = require('gulp-htmlmin')
 const sass = require('gulp-sass')
 const postcss = require('gulp-postcss')
+const sassdoc = require('sassdoc')
+const stylelint = require('gulp-stylelint')
 const jsmin = require('gulp-jsmin')
 const rename = require('gulp-rename')
-const stylelint = require('gulp-stylelint')
 const autoprefixer = require('gulp-autoprefixer')
 const imagemin = require('gulp-imagemin')
 
@@ -27,6 +28,16 @@ gulp.task('styles', () => (
             { syntax: require('postcss-scss') }))
         .pipe(gulp.dest('public/styles'))
 ))
+
+const sassdocsOptions = {
+    dest: 'docs',
+    verbose: true,
+}
+
+gulp.task('sassdoc', () => 
+    gulp.src('styles/**/*.scss')
+        .pipe(sassdoc(sassdocsOptions))
+);
 
 gulp.task('scripts', () => (
     gulp.src('assets/js/*.js')
@@ -52,7 +63,7 @@ gulp.task('pages', () => (
         .pipe(gulp.dest('public'))
 ))
 
-gulp.task('build', ['pages', 'styles', 'scripts', 'images'])
+gulp.task('build', ['pages', 'styles', 'scripts', 'images', 'sassdoc'])
 
 gulp.task('refresh', ['pages', 'styles', 'scripts'])
 
